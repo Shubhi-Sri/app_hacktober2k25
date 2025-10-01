@@ -184,7 +184,9 @@ FIRST_ALIAS_DOMAIN = os.environ.get("FIRST_ALIAS_DOMAIN") or EMAIL_DOMAIN
 
 # list of (priority, email server)
 # e.g. [(10, "mx1.hostname."), (10, "mx2.hostname.")]
-EMAIL_SERVERS_WITH_PRIORITY = sl_getenv("EMAIL_SERVERS_WITH_PRIORITY")
+# EMAIL_SERVERS_WITH_PRIORITY = sl_getenv("EMAIL_SERVERS_WITH_PRIORITY")
+EMAIL_SERVERS_WITH_PRIORITY = sl_getenv("EMAIL_SERVERS_WITH_PRIORITY", default_factory=list)
+
 
 PROTON_MX_SERVERS = get_env_csv(
     "PROTON_MX_SERVERS", "mail.protonmail.ch., mailsec.protonmail.ch."
