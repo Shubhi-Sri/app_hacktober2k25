@@ -46,7 +46,7 @@ COPY . .
 COPY --from=npm /code /code
 
 ENV PATH="/code/.venv/bin:$PATH"
-EXPOSE 7777
+EXPOSE 7000
 
 #gunicorn wsgi:app -b 0.0.0.0:7777 -w 2 --timeout 15 --log-level DEBUG
 CMD ["gunicorn","wsgi:app","-b","0.0.0.0:7777","-w","2","--timeout","15"]
